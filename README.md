@@ -27,7 +27,7 @@ Duración estimada: **2 horas**
 
 ------------------------------------------------------------------------
 
-# 2. Caso de uso
+## 2. Caso de uso
 
 Imaginemos una empresa de **bicicletas compartidas en una ciudad**.
 
@@ -57,7 +57,7 @@ Nuestro sistema con **Flink** deberá:
 
 ------------------------------------------------------------------------
 
-# 3. Arquitectura de la práctica
+## 3. Arquitectura de la práctica
 
     Event Producer
           |
@@ -72,7 +72,7 @@ Nuestro sistema con **Flink** deberá:
 
 ------------------------------------------------------------------------
 
-# 4. Preparación del entorno
+## 4. Preparación del entorno
 
 El repositorio incluye un entorno Docker con:
 
@@ -114,7 +114,7 @@ Esta interfaz permite visualizar los **jobs de streaming**.
 
 ------------------------------------------------------------------------
 
-# 5. Crear el topic en Kafka
+## 5. Crear el topic en Kafka
 
 Entrar al contenedor de Kafka:
 
@@ -147,7 +147,7 @@ Salir del contenedor:
 
 ------------------------------------------------------------------------
 
-# 6. Generar eventos de prueba
+## 6. Generar eventos de prueba
 
 En otra terminal ejecutaremos un **producer simple** para enviar
 eventos.
@@ -177,7 +177,7 @@ Estos eventos serán consumidos por **Flink**.
 
 ------------------------------------------------------------------------
 
-# 7. Implementación del job de Flink
+## 7. Implementación del job de Flink
 
 El job se implementará en **Scala**.
 
@@ -187,7 +187,7 @@ Archivo:
 
 ------------------------------------------------------------------------
 
-# Bloque 1 --- Crear el entorno de streaming
+## Bloque 1 --- Crear el entorno de streaming
 
 Primero creamos el **StreamExecutionEnvironment**.
 
@@ -203,7 +203,7 @@ Esto inicializa el entorno de ejecución de Flink.
 
 ------------------------------------------------------------------------
 
-# Bloque 2 --- Leer eventos desde Kafka
+## Bloque 2 --- Leer eventos desde Kafka
 
 Añadir el siguiente código para crear el **Kafka Source**.
 
@@ -246,7 +246,7 @@ Si aparecen los eventos, **Flink está leyendo correctamente de Kafka**.
 
 ------------------------------------------------------------------------
 
-# Bloque 3 --- Convertir JSON a objeto Scala
+## Bloque 3 --- Convertir JSON a objeto Scala
 
 Definir la clase del evento:
 
@@ -287,7 +287,7 @@ events.print()
 
 ------------------------------------------------------------------------
 
-# Bloque 4 --- Filtrar eventos
+## Bloque 4 --- Filtrar eventos
 
 Solo queremos contar **inicio de viajes**.
 
@@ -307,7 +307,7 @@ rideStarts.print()
 
 ------------------------------------------------------------------------
 
-# Bloque 5 --- Agrupar por estación
+## Bloque 5 --- Agrupar por estación
 
 Agrupamos los eventos por `station_id`.
 
@@ -325,7 +325,7 @@ val stationCounts =
 
 ------------------------------------------------------------------------
 
-# Bloque 6 --- Ventanas temporales
+## Bloque 6 --- Ventanas temporales
 
 Ahora calcularemos **número de viajes cada 30 segundos**.
 
@@ -354,7 +354,7 @@ tripsPerStation.print()
 
 ------------------------------------------------------------------------
 
-# Bloque 7 --- Ejecutar el job
+## Bloque 7 --- Ejecutar el job
 
 Finalmente ejecutar:
 
@@ -364,7 +364,7 @@ env.execute("Bike Streaming Analytics")
 
 ------------------------------------------------------------------------
 
-# 8. Resultado esperado
+## 8. Resultado esperado
 
 En la terminal de ejecución de flink Cada 30 segundos deberían aparecer resultados como:
 
@@ -377,7 +377,7 @@ segundos**.
 
 ------------------------------------------------------------------------
 
-# 9. Resumen del pipeline
+## 9. Resumen del pipeline
 
 El pipeline implementado es:
 
@@ -397,7 +397,7 @@ El pipeline implementado es:
 
 ------------------------------------------------------------------------
 
-# 10 Ejecutar todo en el cluster de flink 
+## 10 Ejecutar todo en el cluster de flink 
 
 
 ## Simular eventos de entrada
@@ -462,7 +462,7 @@ docker logs -f flink-taskmanager
 ```
 ------------------------------------------------------------------------
 
-# 10. Desafío opcional (ejercicio final)
+# 11. Desafío opcional (ejercicio final)
 
 ## Flink Complex Event Processing CEP con Kafka
 
@@ -550,3 +550,4 @@ En esta práctica hemos utilizado:
 -   **keyBy**
 -   **windowing**
 -   Procesamiento en **tiempo real**
+-   Procesamiento de Eventos complejos CEP
