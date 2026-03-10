@@ -1,0 +1,4 @@
+This is a sample text file.
+It contains some repeated words like test and sample.
+Flink will read this test file word by word and count each word occurrence.
+This demonstrates Flink batch processing capabilities using static text files.
