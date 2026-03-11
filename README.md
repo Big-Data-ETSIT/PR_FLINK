@@ -247,6 +247,13 @@ stream.print()
 ```
 
 Ejecutar el job.
+cd flink-job
+
+docker run -it --rm \
+-v $(pwd):/workspace \
+-w /workspace \
+sbtscala/scala-sbt:openjdk-11.0.20_1.9.6_2.12.18 \
+sbt run
 
 Deberías ver en consola:
 
