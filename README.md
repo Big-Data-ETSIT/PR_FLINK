@@ -253,7 +253,7 @@ cd flink-job
 docker run -it --rm \
 -v $(pwd):/workspace \
 -w /workspace \
-sbtscala/scala-sbt:openjdk-11.0.20_1.9.6_2.12.18 \
+sbtscala/scala-sbt:graalvm-ce-22.3.3-b1-java17_1.12.5_3.8.2 \
 sbt run
 ```
 Deberías ver en consola:
