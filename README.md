@@ -442,7 +442,7 @@ cambiar la direcciñon de kafka por la del contenedor:
 
 ``` scala
 val kafkaSource = KafkaSource.builder[String]
-  .setBootstrapServers("localhost:9092")
+  .setBootstrapServers("kafka:29092")
   .setTopics("bike-events")
   .setGroupId("flink-consumer")
   .setValueOnlyDeserializer(new SimpleStringSchema())
