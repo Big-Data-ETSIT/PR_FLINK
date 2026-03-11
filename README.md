@@ -83,8 +83,18 @@ El repositorio incluye un entorno Docker con:
 ------------------------------------------------------------------------
 
 ## 4.1 Levantar el entorno
+Clonar el repositorio:
+```bash
+git clone https://github.com/Big-Data-ETSIT/PR_FLINK
+```
+```bash
+cd PR_FLINK
+```
 
-Desde la carpeta del repositorio ejecutar:
+Desde la carpeta `docker` del repositorio ejecutar:
+```bash
+cd docker
+```
 
 ``` bash
 docker compose up -d
